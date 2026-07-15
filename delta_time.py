@@ -13,5 +13,3 @@ class DeltaTime:
 
     def __rmul__(self, other):
         return other * self.dt
-
-dt = DeltaTime()

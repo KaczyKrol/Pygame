@@ -1,6 +1,5 @@
 import pygame as pg
 
-
 class PlayerInput:
     def __init__(self):
         self.keys_down = set()

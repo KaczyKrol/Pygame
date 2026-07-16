@@ -42,6 +42,7 @@ def resolve_collision(bodyA, bodyB):
         bodyA.transform.vel.x = 0
         bodyA.transform.acc.x = 0
 
+
     else:
         if bodyA.transform.pos.y < bodyB.transform.pos.y:
             bodyA.transform.pos.y -= dy

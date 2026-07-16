@@ -1,12 +1,13 @@
 import pygame as pg
-import delta_time as dt
+import delta_time as Dt
 import collider as coll
+import vector as v
 
 class Transform:
-    def __init__(self, x, y, dt: dt.DeltaTime):
-        self.pos = pg.Vector2(x, y)
-        self.vel = pg.Vector2(0, 0)
-        self.acc = pg.Vector2(0, 0)
+    def __init__(self, x, y, dt: Dt.DeltaTime):
+        self.pos = v.Vector(x, y)
+        self.vel = v.Vector()
+        self.acc = v.Vector()
         self.dt = dt
 
     def update(self):
@@ -14,9 +15,9 @@ class Transform:
         self.pos += self.vel * self.dt
 
 class RigidBody:
-    def __init__(self,x,y,h,w,m, dt: dt.DeltaTime):
+    def __init__(self,x,y,w,h,m, dt: Dt.DeltaTime):
         self.transform = Transform(x,y, dt)
-        self.dim = pg.Vector2(w,h)
+        self.dim = v.Vector(w,h)
 
         self.mass = m
         self.inv_mass = 1/self.mass if self.mass != 0 else 0

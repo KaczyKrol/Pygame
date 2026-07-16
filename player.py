@@ -1,5 +1,5 @@
 import pygame as pg
-
+import constants as c
 import rigid_body as rb
 import trigger as t
 
@@ -17,7 +17,9 @@ class Player:
         pass
 
     def restrictive_forces(self):
-        pass
+        force = - self.rb.transform.vel * abs(self.rb.transform.vel) * c.RES
+        self.rb.apply_force(force)
+
 
     def walk(self):
         pass
@@ -30,3 +32,5 @@ class Player:
 
     def update(self):
         pass
+
+# zmienić system kolizji tak, żeby działał na siłach wyrównujących, a nie na zerowaniu

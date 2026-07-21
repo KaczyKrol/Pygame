@@ -1,0 +1,2 @@
+GRAV = 9.8
+RESISTANCE = 0.25

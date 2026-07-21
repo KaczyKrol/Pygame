@@ -13,3 +13,9 @@ class DeltaTime:
 
     def __rmul__(self, other):
         return other * self.dt
+
+    def __add__(self, other):
+        return self.dt + other
+
+    def __radd__(self, other):
+        return other + self.dt
